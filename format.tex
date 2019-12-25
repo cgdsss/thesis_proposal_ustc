@@ -43,25 +43,12 @@
 % \renewcommand{\headrule}{
 %     {\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
 %      \makeheadrule}}
-\makeatother
-		
-\pagestyle{fancyplain}
-% \renewcommand{\chaptermark}[1]{\relax}
-% \renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhf{}
-\ifxueweidoctor
-  \fancyhead[CO]{\songti \zihao{-5}\rightmark}
-  \fancyhead[CE]{\songti \zihao{-5} 中国科学技术大学博士学位论文开题报告}%
-  \fancyfoot[C]{\zihao{-5} -~\thepage~-}
-	\renewcommand\bibsection{\section*{\centerline{\bibname}}
-	\markboth{中国科学技术大学博士学位论文开题报告}{\bibname}}
-\fi
-\ifxueweimaster
-  \fancyhead[C]{\songti \zihao{-5} 中国科学技术大学硕士学位论文开题报告}
-  \fancyfoot[C]{\zihao{-5} -~\thepage~-}
-	\renewcommand\bibsection{\section*{\centerline{\bibname}}
-	\markboth{中国科学技术大学硕士学位论文开题报告}{\bibname}}
-\fi
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\fontsize{9pt}{9pt}\selectfont\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\pagestyle{plain}
 
 \renewcommand{\CJKglue}{\hskip 0.56pt plus 0.08\baselineskip} %加大字间距，使每行33个字
 \def\defaultfont{\renewcommand{\baselinestretch}{1.62}\normalsize\selectfont}
